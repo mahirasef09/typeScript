@@ -1,40 +1,43 @@
-# **Q3:the difference between any, unknown, and never types in TypeScript.**
+# **Q3: The difference between any, unknown, and never types in TypeScript.**
 ## **any Type:**
 You can assign anything to a variable of any type. It disables type checking that's why it is unsafe to use. It is only used when migration from javascript
 ### <ins>Example:</ins>
-<pre>let value: any = "hello";
-value.toUpperCase();
-value = 42;           
-value.toFixed(2);</pre> 
+<pre>let data: any = "TypeScript";
+console.log(data.toUpperCase()); // OK
+console.log(data.push("!"));     // String does not support push but it will show No error</pre> 
 
 ## **unknown Type:**
-In unknown type you can assign anything to it, but you must narrow its type before using it. So we can say The unknown type is like any, but type-safe.
+In unknown type you can assign anything to it, but you must narrow its type before using it. So we can say the unknown type is like any, but type-safe.
 ### <ins>Example:</ins>
 <pre>let value: unknown = "hello";
-value = 42; // OK
+value = 42;
 
-// value.toUpperCase();
+console.log(value.toUpperCase()); // Error because you have not checked the type first
 
 if (typeof value === "string") {
-  console.log(value.toUpperCase());
+  console.log(value.toUpperCase()); // Safe because you have checked the type first
 }</pre>
-## **never Type:**
-The never type represents a value that never occurs. It's used for functions that never return, throw errors or infinite loops or impossible types.
-### <ins>Example:</ins>
-<pre>type Shape = "circle" | "square";
 
-function getArea(shape: Shape): number {
-  if (shape === "circle") {
-    return 3.14;
-  } else if (shape === "square") {
-    return 1;
-  } else {
-    const _exhaustive: never = shape; // Ensures all cases are handled
-    return _exhaustive;
+## **never Type:**
+The never type represents a value that never occurs.When functions never return, throw errors or infinite loops or impossible types it's used. Main purpose of using never type is ensuring code correctness and exhaustiveness.
+
+### <ins>Example:</ins>
+<pre>function throwError(message: string): never {
+  throw new Error(message);
+}</pre>
+
+*This function never returns because it throws an error.*
+
+### <ins>Example:</ins>
+<pre>function infiniteLoop(): never {
+  while (true) {
+    // Doing something endlessly
   }
 }</pre>
 
-# **Q7:Using union and intersection types in TypeScript with examples.**
+*The function will never exit, so its return type is never*
+
+# **Q7: Using union and intersection types in TypeScript with examples.**
 ## **Union Types:**
 A variable can hold one of several types by using union type. The symbol of union type is “|”.
 ### <ins>Example:</ins>
