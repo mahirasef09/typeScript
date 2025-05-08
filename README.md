@@ -1,4 +1,4 @@
-# **Using union and intersection types in TypeScript with example.**
+# **Q7:Using union and intersection types in TypeScript with example.**
 ## **Union Types:**
 A variable can hold one of several types by using union type. The symbol of union type is “|”.
 ### <ins>Example:</ins>
@@ -10,7 +10,7 @@ user("abc123");</pre>
 
 *Here, id can be either a string or a number.*
 
-**By using type guards, you can also narrow the type.**
+*By using type guards, you can also narrow the type.*
 ### <ins>Example:</ins>
 <pre>function upperCaseOrTenTimes(id: string | number) {
   if (typeof id === "string") {
@@ -47,7 +47,7 @@ const fullstackDeveloper: FullstackDeveloper = {
   };</pre>
 *Here, FullstackDeveloper must have name, skills, designation1 and designation2 property.*
 
-**You can use this in functions too.**
+*You can use this in functions too.*
 ### <ins>Example:</ins>
 <pre>function welcome(developer: FrontendDeveloper & BackendDeveloper) {
   console.log(`Welcome, ${developer.name} in our company`);
