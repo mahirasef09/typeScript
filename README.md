@@ -1,4 +1,40 @@
-# **Q7:Using union and intersection types in TypeScript with example.**
+# **Q3:the difference between any, unknown, and never types in TypeScript.**
+## **any Type:**
+You can assign anything to a variable of any type. It disables type checking that's why it is unsafe to use. It is only used when migration from javascript
+### <ins>Example:</ins>
+<pre>let value: any = "hello";
+value.toUpperCase();
+value = 42;           
+value.toFixed(2);</pre> 
+
+## **unknown Type:**
+In unknown type you can assign anything to it, but you must narrow its type before using it. So we can say The unknown type is like any, but type-safe.
+### <ins>Example:</ins>
+<pre>let value: unknown = "hello";
+value = 42; // OK
+
+// value.toUpperCase();
+
+if (typeof value === "string") {
+  console.log(value.toUpperCase());
+}</pre>
+## **never Type:**
+The never type represents a value that never occurs. It's used for functions that never return, throw errors or infinite loops or impossible types.
+### <ins>Example:</ins>
+<pre>type Shape = "circle" | "square";
+
+function getArea(shape: Shape): number {
+  if (shape === "circle") {
+    return 3.14;
+  } else if (shape === "square") {
+    return 1;
+  } else {
+    const _exhaustive: never = shape; // Ensures all cases are handled
+    return _exhaustive;
+  }
+}</pre>
+
+# **Q7:Using union and intersection types in TypeScript with examples.**
 ## **Union Types:**
 A variable can hold one of several types by using union type. The symbol of union type is “|”.
 ### <ins>Example:</ins>
