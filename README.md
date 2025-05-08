@@ -2,11 +2,11 @@
 ## **Union Types:**
 A variable can hold one of several types by using union type. The symbol of union type is “|”.
 ### <ins>Example:</ins>
-function user(id: string | number) {
+<pre>function user(id: string | number) {
   console.log(`Your id is: ${id}`);
 }
 user(123);
-user("abc123");  
+user("abc123");</pre>
 
 *Here, id can be either a string or a number.*
 
@@ -50,7 +50,7 @@ const fullstackDeveloper: FullstackDeveloper = {
 **You can use this in functions too.**
 ### <ins>Example:</ins>
 function welcome(developer: FrontendDeveloper & BackendDeveloper) {
-  console.log(`Welcome, ${developer.name} in our company.`);
+  console.log(`Welcome, ${developer.name} in our company`);
 }
 
 
