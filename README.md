@@ -44,6 +44,7 @@ A variable can hold one of several types by using union type. The symbol of unio
 <pre>function user(id: string | number) {
   console.log(`Your id is: ${id}`);
 }
+
 user(123);
 user("abc123");</pre>
 
