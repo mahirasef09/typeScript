@@ -12,12 +12,12 @@ user("abc123");</pre>
 
 **By using type guards, you can also narrow the type.**
 ### <ins>Example:</ins>
-function upperCaseOrTenTimes(id: string | number) {
+<pre>function upperCaseOrTenTimes(id: string | number) {
   if (typeof id === "string") {
     return id.toUpperCase(); 
   }
   return id*10;     
-}
+}</pre>
 
 *Here, if id is string then it will be uppercase but if id is number it will be 10 times bigger.*
 
@@ -25,7 +25,7 @@ function upperCaseOrTenTimes(id: string | number) {
 ## **Intersection Types:**
 An intersection type combines multiple types into one. The symbol of union type is “&”.
 #### <ins>Example:</ins>
-type FrontendDeveloper = {
+<pre>type FrontendDeveloper = {
     name: string;
     skills: string[];
     designation1: "Frontend Developer";
@@ -44,14 +44,14 @@ const fullstackDeveloper: FullstackDeveloper = {
     skills: ["HTML", "CSS", "EXPRESS"],
     designation1: "Frontend Developer",
     designation2: "Backend Developer",
-  };
+  };</pre>
 *Here, FullstackDeveloper must have name, skills, designation1 and designation2 property.*
 
 **You can use this in functions too.**
 ### <ins>Example:</ins>
-function welcome(developer: FrontendDeveloper & BackendDeveloper) {
+<pre>function welcome(developer: FrontendDeveloper & BackendDeveloper) {
   console.log(`Welcome, ${developer.name} in our company`);
-}
+}</pre>
 
 
 
