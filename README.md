@@ -1,13 +1,13 @@
 # **Q3: The difference between any, unknown, and never types in TypeScript.**
 ## **any Type:**
-You can assign anything to a variable of any type. It disables type checking that's why it is unsafe to use. It is only used when migration from javascript
+You can assign anything to a variable of any type. It disables type checking that's why it is unsafe to use. It is only used when migration from javascript required.
 ### <ins>Example:</ins>
 <pre>let data: any = "TypeScript";
 console.log(data.toUpperCase()); // OK
 console.log(data.push("!"));     // String does not support push but it will show No error</pre> 
 
 ## **unknown Type:**
-In unknown type you can assign anything to it, but you must narrow its type before using it. So we can say the unknown type is like any, but type-safe.
+In unknown type you can assign anything to it, but you must narrow its type before using it. So you can say that the unknown type is like any, but type-safe.
 ### <ins>Example:</ins>
 <pre>let value: unknown = "hello";
 value = 42;
@@ -19,7 +19,7 @@ if (typeof value === "string") {
 }</pre>
 
 ## **never Type:**
-The never type represents a value that never occurs.When functions never return, throw errors or infinite loops or impossible types it's used. Main purpose of using never type is ensuring code correctness and exhaustiveness.
+Unlike any or unknown type, nothing can be assigned to never type. The never type represents a value that never occurs.When a function never return or throw errors or infinite loops or impossible types it's used. Main purpose of using never type is ensuring code correctness and exhaustiveness.
 
 ### <ins>Example:</ins>
 <pre>function throwError(message: string): never {
